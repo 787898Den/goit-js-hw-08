@@ -34,9 +34,12 @@ function onFormSubmit(event) {
   formDataToSend.forEach((value, name) => {
     formData[name] = value;
   });
-
+  if (!formData.email || !formData.message) return
   event.currentTarget.reset();
   localStorage.removeItem(KEY);
 
   console.log(formData);
 }
+
+
+
